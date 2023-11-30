@@ -7,15 +7,22 @@ public class Main {
 
     public static int division(Integer numeratore, Integer denominatore){
         int result = numeratore / denominatore;
+
+        try{
             if (numeratore == null) {
-                throw new IllegalArgumentException("Errore");
+                throw new ArithmeticException("Errore");
             } else if (denominatore == null) {
-                throw new IllegalArgumentException("Errore");
+                throw new ArithmeticException("Errore");
             }
+        } catch (ArithmeticException e){
+            System.out.println(e.getMessage());
+        }
+
+
         return result;
+
     }
 }
-
 
 
 
